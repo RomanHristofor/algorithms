@@ -167,6 +167,7 @@ minSubstring(["ahffaksfajeeubsne", "jefaa"]); // Output: aksfaje
 
 # Array
 ## Задача: Поиск второго максимального числа в массиве
+```
 function findSecondMax(arr) {
   let firstMax = -Infinity;
   let secondMax = -Infinity;
@@ -183,7 +184,7 @@ function findSecondMax(arr) {
   return secondMax;
 }
 findSecondMax([2, 3, 6, 6, 5]); // 5
-
+```
 
 ## Задача: Быстрая сортировка элементов массива
 Описание:
