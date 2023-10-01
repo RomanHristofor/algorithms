@@ -408,3 +408,49 @@ TreeConstructor(
 ```
 
 
+## Задача:
+Пример реализации поиска в графе с использованием алгоритма поиска в ширину `BFS`
+```
+const graph = {};
+graph.a = ['b', 'c']
+graph.b = ['f']
+graph.o = ['d', 'e']
+graph.d = ['f']
+graph.e = ['f']
+graph.f = ['g']
+
+function bfs(graph, start, end) {
+  // Список посещенных вершин
+  const visited = new Set();
+
+  // Очередь вершин для обхода
+  const queue = [];
+
+  // Добавляем начальную вершину в очередь и помечаем ее как посещенную
+  queue.push(start);
+  visited.add(start);
+
+  // Итеративно обходим граф
+  while (queue.length > 0) {
+    // Извлекаем первую вершину из очереди
+    const node = queue.shift();
+
+    // Проверяем, является ли текущая вершина целевой
+    if (node === end) {
+      return true;
+    }
+
+    // Добавляем все соседние вершины в очередь, если они еще не были посещены
+    graph[node].forEach((neighbor) => {
+      if (!visited.has(neighbor)) {
+        queue.push(neighbor);
+        visited.add(neighbor);
+      }
+    });
+  }
+  // Если целевая вершина не найдена, возвращаем false
+  return false;
+}
+// Ищем путь от вершины 'a' к вершине 'g'
+bfs(graph, 'a', 'g'); // true
+```
