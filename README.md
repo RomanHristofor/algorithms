@@ -412,12 +412,12 @@ TreeConstructor(
 Пример реализации поиска в графе с использованием алгоритма поиска в ширину `BFS`
 ```
 const graph = {};
-graph.a = ['b', 'c']
-graph.b = ['f']
-graph.o = ['d', 'e']
-graph.d = ['f']
-graph.e = ['f']
-graph.f = ['g']
+graph.a = ['b', 'c'];
+graph.b = ['f'];
+graph.c = ['f'];
+graph.o = ['d', 'e'];
+graph.d = ['f'];
+graph.f = ['g'];
 
 function bfs(graph, start, end) {
   // Список посещенных вершин
